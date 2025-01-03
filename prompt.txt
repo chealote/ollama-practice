@@ -1,0 +1,39 @@
+role: user
+content:
+diff --git a/index.html b/index.html
+index e69de29..dbcbef5 100644
+--- a/index.html
++++ b/index.html
+@@ -0,0 +1,12 @@
++<!DOCTYPE html>
++<html lang="en">
++  <head>
++    <meta charset="utf-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1">
++    <title>Some title</title>
++  </head>
++  <body>
++    <div id="app"></div>
++  </body>
++</html>
+
+role: assistant
+content: git commit -m 'Update index.html with a basic html template'
+
+role: user
+content:
+diff --git a/main.go b/main.go
+index a932932..20f0d0f 100644
+--- a/main.go
++++ b/main.go
+@@ -5,5 +5,5 @@ import (
+ )
+
+ func main() {
+-       fmt.Println("")
++       fmt.Println("Hello World!")
+ }
+
+role: assistant
+content: git commit -m 'Update main.go with adding a string to print'
