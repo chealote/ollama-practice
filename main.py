@@ -107,13 +107,10 @@ while option != 0:
     option = get_option(["yes", "no", "other"])
     print("You answer:", option, "and the sugg command is:", suggested_command)
 
-
 commit_msg = re.findall("'[^']+'$", suggested_command)[0]
 commit_cmd = re.findall("^[^']+", suggested_command)[0]
-full_commit_cmd = commit_cmd.split(" ")
+full_commit_cmd = [ s for s in commit_cmd.split(" ") if s != "" ]
 full_commit_cmd.append(commit_msg)
 
 output = subprocess.run(full_commit_cmd, stdout=subprocess.PIPE)
 print(output)
-
-# TODO ask to run the full commit command
